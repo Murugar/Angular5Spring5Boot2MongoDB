@@ -1,0 +1,19 @@
+<div *ngIf="customer">
+	<div class="text-primary">
+		<label>Name: </label> {{customer.name}}
+	</div>
+	<div class="text-primary">
+		<label>Age: </label> {{customer.age}}
+	</div>
+	<div class="text-primary">
+		<label>Active: </label> {{customer.active}}
+	</div>
+
+	<span class="button btn-primary" *ngIf='customer.active' (click)='updateActive(false)'>Inactive</span>
+
+	<span class="button btn-success" *ngIf='!customer.active' (click)='updateActive(true)'>Active</span>
+
+	<span class="button btn-danger" (click)='deleteCustomer()'>Delete</span>
+
+	<hr/>
+</div>
